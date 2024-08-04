@@ -7,4 +7,4 @@
 ----
 자신의 강의자료를 웹사이트에 업로드하여 강의자료 기반 주관식, 객관식, O/X 문제를 풀어볼 수 있습니다.
 
-https://github.com/pdh90345/PET/blob/main/KakaoTalk_20240804_141609398.jpg
+![캡스톤포스터](https://github.com/pdh90345/PET/blob/main/KakaoTalk_20240804_141609398.jpg)
