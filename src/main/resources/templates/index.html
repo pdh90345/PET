@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
+          type="text/css"/>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#!">P.E.T</a>
+        <span th:text="|${session.loginMember.user_name}님 환영합니다.|" th:if="${!session.isEmpty()}"></span>
+        <a class="btn btn-primary" href='/login' th:text="로그인" th:if="${session.isEmpty()}">로그인</a>
+        <a class="btn btn-primary" href='/logout' th:text="로그아웃" th:if="${!session.isEmpty()}">로그아웃</a>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">문제 출제 사이트 P.E.T!!!</h1>
+                    <!-- Signup form-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input-->
+                        <div class="row">
+                            <div class="col">
+                                <!--    <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" /> -->
+                                <!--                                <input class = "form-control form-control-lg" input type = "file"  accept = "image/*, .pdf">-->
+                                <!--                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">File is required.</div>-->
+                                <!--                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">File is not valid.</div>-->
+                            </div>
+                            <div>
+                                <a class="btn btn-primary" href='/login' th:text="|로그인을 먼저 해주세요.|"
+                                   th:if="${session.isEmpty()}">로그인을 해주세요.</a>
+                                <a class="btn btn-primary" href='/problem' th:text="|문제 풀러 가기!|"
+                                   th:if="${!session.isEmpty()}">문제 풀러 가기</a>
+                            </div>
+                        </div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Icons Grid-->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                    <h3>질 높은 문제</h3>
+                    <p class="lead mb-0">학습된 AI가 강의자료를 바탕으로<br>문제를 출제</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                    <h3>다양한 이론 과목</h3>
+                    <p class="lead mb-0">다양한 과목의 강의자료 입력 가능</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                    <h3>다양한 유형의 문제</h3>
+                    <p class="lead mb-0">다양한 유형의 문제를 통해 학습 효과 UP!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Image Showcases-->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                 style="background-image: url('/images/bg-showcase-1.jpg')"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>프로젝트 배경</h2>
+                <p class="lead mb-0">대학생들은 공부를 할 때 수업 강의 자료나 전공 서적을 이용해 공부를 합니다. 하지만 이와 같은 자료들에는 풀어볼 문제들이 부족합니다. 대부분의
+                    대학생들은 이론을 공부하고 문제를 풀어 자신의 실력을 테스트하기 때문에 대학생들이 사용하는 자료를 가지고 질 좋은 문제를 만들어주는 웹사이트를 제공해서 대학생들의 공부 부담을
+                    줄이기 위해<br>노력할 것입니다.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 text-white showcase-img"
+                 style="background-image: url('/images/bg-showcase-2.jpg')"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>프로젝트 소개</h2>
+                <p class="lead mb-0">본 프로젝트는 대학생들의 공부 부담을 줄여주기 위해서 사용자가 자료를 웹사이트에 입력하면 자연어 처리과정을 통해 불용어, 특수문자를 제거하고
+                    컴퓨터에게 인간의 언어를 이해시키고 문제 생성 알고리즘을 통해 문제를 출력해주는 프로젝트입니다.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                 style="background-image: url('/images/bg-showcase-3.jpg')"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>프로젝트 목표</h2>
+                <p class="lead mb-0">본 프로젝트의 목표는 대학생들이 공부를 할 때 풀어 볼 문제가 부족해서 어려움을 느끼지 않도록 좋은 문제들을 출력하는 웹사이트를 제공하는 것이
+                    목표입니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials-->
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">학생들은 말합니다</h2>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/images/1.png" alt="..."/>
+                    <h5>조성정</h5>
+                    <p class="font-weight-light mb-0">"학습에 큰 도움이 됐어요 감사합니다!"</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/images/2.png" alt="..."/>
+                    <h5>김재혁</h5>
+                    <p class="font-weight-light mb-0">"문제의 질이 좋아서 실제 시험 문제를<br>푸는 것 같아요"</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/images/3.png" alt="..."/>
+                    <h5>박다흰</h5>
+                    <p class="font-weight-light mb-0">"P.E.T는 신이야"</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/images/4.png" alt="..."/>
+                    <h5>노민솔</h5>
+                    <p class="font-weight-light mb-0">"빨리! 풀어볼게"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Call to Action-->
+
+<!-- Footer-->
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><a href="#!">About</a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="#!">Contact</a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

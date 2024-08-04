@@ -1,0 +1,5 @@
+streamlit
+openai
+chardet
+PyPDF2
+python-docx
