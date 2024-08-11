@@ -36,7 +36,7 @@ def check_mypage(input_id):
                 st.write("서술형의 문제를 생성합니다.")
                 num_questions = st.number_input("생성할 문제 수를 입력하세요 :", min_value=1, max_value=10, value=3)
 
-                api_key = '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'
+                api_key = ''
 
                 openai.api_key = api_key
 
